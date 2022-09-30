@@ -17,7 +17,7 @@ EVEN = "even"
 PRIME = "prime"
 
 
-def filter_numbers(filter_type, numbers):
+def filter_numbers(numbers, filter_type):
     if filter_type == ODD:
         return list(filter(is_odd, numbers))
     elif filter_type == EVEN:
@@ -38,7 +38,7 @@ def is_odd(num):
 
 def is_prime(num):
     if not isinstance(num, int):
-        raise TypeError("Expected int, got %s" % (type(num),))
+        raise TypeError("Expected int, got %s" % (type(num)))
 
     if (num <= 1):
         return False
