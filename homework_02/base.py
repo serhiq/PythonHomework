@@ -29,6 +29,8 @@ class Vehicle(ABC):
 
         can_move = fuel_consumption <= self.fuel
 
+        # я бы инвертировал условие, чтобы по истине делать `raise` и покидать метод
+        # поскольку если в случае успешной проверки нам надо будет выполнять уже не одну строчку, а много, то истинная ветка раздуется
         if can_move:
             self.fuel -= fuel_consumption
         else:
